@@ -19,11 +19,11 @@ const RecentProject = () => {
     <section id='projects'>
       <div className='py-20 flex flex-col justify-center items-center'>
         <LampContainer>
-          <h1 className='heading'>A small selection of {' '}
+          <h1 className='heading mb-4'>A small selection of {' '}
             <span className='text-lime-200'>Recent Projects</span>
           </h1>
-          <p>Check out more work at ...</p>
-          <a href='https://github.com/Zapper9982'>
+         
+          <a  href='https://github.com/Zapper9982'>
           <MagicButton title='Github Profile' /></a>
           <div className='w-24 h-2 mt-5 rounded-lg bg-gradient-to-r from-slate-300 to-slate-500'></div>
         </LampContainer>
