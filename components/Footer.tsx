@@ -2,6 +2,7 @@ import React from 'react'
 import { MagicButton } from './ui/MagicButton'
 import { FaLocationArrow } from 'react-icons/fa'
 import { socialMedia } from '@/data'
+import Image from 'next/image'
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
        
        <div className='flex flex-col items-center '>
         <h1 className='heading lg:max-w-[45vw]'>Want to work and Contribute <span className='text-red-400'>together </span> ?</h1>
-        <p className='text-white-200 md:mt-10 my-5 text-center '> Reach out to me today ? Let's discuss how we can make some cool projects </p>
+        <p className='text-white-200 md:mt-10 my-5 text-center '> Reach out to me today ? Lets discuss how we can make some cool projects </p>
         <a href='mailto:emailtotanmay@gmail.com'> 
             <MagicButton title='Lets get in touch ' icon={<FaLocationArrow/> } position='right'/>
         </a>
@@ -18,7 +19,7 @@ const Footer = () => {
         <p className='md:text-base text-sm md:font-normal font-extralight'>Copyright © 2024 Tanmay Deobhankar</p>
         <div className='flex items-center md:gap-3 gap-6 '>{socialMedia.map((profile) =>(
             <div key={profile.id} className='w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300 mb-8'>
-               <a href={profile.navigate}> <img src={profile.img} alt={profile.id} width={20} height={20}/></a>
+               <a href={profile.navigate}> <Image  src={profile.img} alt={profile.id} width={20} height={20}/></a>
 
             </div>
         ))}</div>

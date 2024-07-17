@@ -71,7 +71,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       }[]
     | null
   >(null);
-
+ 
   const globeRef = useRef<ThreeGlobe | null>(null);
 
   const defaultProps = {
@@ -135,7 +135,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       });
     }
 
-    // remove duplicates for same lat and lng
+   
     const filteredPoints = points.filter(
       (v, i, a) =>
         a.findIndex((v2) =>

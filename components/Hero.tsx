@@ -8,6 +8,7 @@ import {Typewriter} from 'react-simple-typewriter'
 import {MagicButton} from './ui/MagicButton'
 import { FaLocationArrow } from 'react-icons/fa'
 import {FlipWords} from './ui/FlipWords'
+import Image from 'next/image'
 
 
 const images = [
@@ -42,7 +43,7 @@ const Hero = () => {
       </div>
       
 
-      <img src={selectedImage} className='lg:h-[400px] left-44 rounded-full lg:w-[400px] absolute hidden lg:block border-4 border-green-300 border-spacing-72' />
+      <img  src={selectedImage} className='lg:h-[400px] left-44 rounded-full lg:w-[400px] absolute hidden lg:block border-4 border-green-300 border-spacing-72' />
       <div className='flex items-center justify-center my-20 gap-80 z-10 relative lg:left-72' >
      
       
