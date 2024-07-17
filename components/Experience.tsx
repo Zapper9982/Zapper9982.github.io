@@ -11,7 +11,7 @@ const Experience = () => {
           {workExperience.map((card)=>(
             <Button  duration={ Math.floor(Math.random()*1000)+10000} key={card.id} className='flex-1 text-white border-neutral-200 dark:border-slate-800'>
               <div className='flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2'>
-                <Image fill src={card.thumbnail} alt={card.thumbnail} className='lg:w-32 md:w-20 w-16 rounded-full'/>
+                <Image src={card.thumbnail} alt={card.thumbnail} className='lg:w-32 md:w-20 w-16 rounded-full' width={40} height={40} />
               </div>
               <div className='lg:ms-5 '>
                 <h1 className='text-start text-xl md:text-2xl font-bold' dangerouslySetInnerHTML= {{__html:card.title}}>
