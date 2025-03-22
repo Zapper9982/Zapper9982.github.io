@@ -164,7 +164,7 @@ export const navItems = [
     {
       id: 3,
       img: "/link.svg",
-      navigate:"https://in.linkedin.com/in/tanmay-deobhankar-3997a228a"
+      navigate:"https://in.linkedin.com/in/tanmay-deobhan334werfefrfewrf"
     },
   ];
 
