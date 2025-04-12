@@ -41,13 +41,7 @@ const RecentProject = () => {
                 <h1 className='font-bold lg:text-2xl md:text-xl text-base line-clamp-1'>{title}</h1>
                 <p className='lg:text-sm opacity-60 lg:font-normal font-light text-sm line-clamp-2'>{des}</p>
                 <div className='flex items-center justify-between mt-7 mb-3'>
-                  <div className='flex items-center'>
-                    {iconLists.map((icon, index) => (
-                      <div key={icon} className='border border-white/[0.2] rounded-full bg-black-100 lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center' style={{transform:`translateX(-${5*index*2}px)`, color:`${color}`}}>
-                        <Image fill src={icon} alt={`icon-${index}`} className='p-2' />
-                      </div>
-                    ))}
-                  </div>
+                
                   <div>
                     <p>Check Live site</p>
                   </div>

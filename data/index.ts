@@ -80,29 +80,29 @@ export const navItems = [
   export const projects = [
     {
       id: 1,
-      title: "A personal NoteIt App",
-      des: "A simple notes App for ur complex workflow , with provision to Pin notes and adding Tags",
-      img: "/personal-NoteIt.png",
-      iconLists: ["/re.svg", "/tail.svg", "/logo-javascript.svg", "/mongodb-svgrepo-com.svg", "/node-js-seeklogo.svg"],
-      link: "https://personal-noteit-frontend.onrender.com",
+      title: "An AI based Website Maintainance APP",
+      des: "An application which allows you to analysis your website for your metadata, SEO score , as well are outdated Content and much more and then update those changes onto your code , with your permission seamlessly.",
+      img: "/Agentxx.png",
+      iconLists: ["/re.svg", "/nextjs.svg", "/Typescript.svg", "/mongodb-svgrepo-com.svg","/flask.svg"],
+      link: "https://github.com/Zapper9982/agentxx",
       color:"text-blue-200"
     },
     {
       id: 2,
-      title: "A hotel Booking App",
-      des: "A project to book hotels with the provision to book hotel and advanced City search Algorithm",
-      img: "/hotel-booking.png",
+      title: "Stash- Windows Session Manager",
+      des: "A project where you can manage your Windows application sessions. According to your comfort and workflows and also schedule when u want some apps to open all at one place. ",
+      img: "/stash.png",
       iconLists: ["/node-js-seeklogo.svg", "/tail.svg", "/logo-javascript.svg", "/stream.svg", "/mongodb-svgrepo-com.svg"],
-      link: "https://github.com/Zapper9982/Hotel-Bookingsapp",
+      link: "https://github.com/OVER-CODER/Stash",
       color:"text-green-200"
     },
     {
       id: 3,
-      title: "A Confession Page using college Confession API ",
-      des: "A website where people can confess their sins to each other anonymously! using my colleges personal API",
-      img: "/confession.png",
+      title: "Alive Docs - An realtime docs.",
+      des: "An web application which allows users to work with each other on docs on realtime , its very useful for jotting down notes to coming up with workflows , with features to be able to comment on particular parts of lines , or even words. Making an immersive experience overall.",
+      img: "/Alivedocs.png",
       iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-      link: "no link available",
+      link: "https://alive-docs.vercel.app/",
       color:"text-red-200"  
     },
     {
