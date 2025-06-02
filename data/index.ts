@@ -57,7 +57,7 @@ export const navItems = [
   
     {
       id: 5,
-      title: "Currently working on a project to Schedule a <span class='text-rose-900'>doctors appointment</span>",
+      title: "Currently working on Learning  <span class='text-rose-900'>Kubernetes , Docker and Jenkins basically DevOPS</span>",
       description: "The Inside Scoop",
       className: "md:col-span-3 md:row-span-2",
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60 ",
