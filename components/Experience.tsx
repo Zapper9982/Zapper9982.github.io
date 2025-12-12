@@ -1,33 +1,55 @@
 import { workExperience } from '@/data'
 import React from 'react'
-import { Button } from './ui/MovingBorders'
+import { Timeline } from './ui/Timeline'
 import Image from 'next/image'
 
 const Experience = () => {
-  return (
-    <div className='py-20' id='experience'>
-        <h1 className='heading'>My work <span className='text-teal-500'>Experience</span></h1>
-        <div className='w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10' >
-          {workExperience.map((card)=>(
-            <Button  duration={ Math.floor(Math.random()*1000)+10000} key={card.id} className='flex-1 text-white border-neutral-200 dark:border-slate-800'>
-              <div className='flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2'>
-                <Image src={card.thumbnail} alt={card.thumbnail} className='lg:w-32 md:w-20 w-16 rounded-full' width={40} height={40} />
-              </div>
-              <div className='lg:ms-5 '>
-                <h1 className='text-start text-xl md:text-2xl font-bold' dangerouslySetInnerHTML= {{__html:card.title}}>
-                 
-                </h1>
-                <p className='text-start text-white-100 mt-3 font-semibold'>
-                  {card.desc}
-                </p>
-
-              </div>
-
-            </Button>
-
-          ))}
-
+  const data = workExperience.map((item) => ({
+    title: item.date || "Ongoing",
+    content: (
+      <div>
+        <div className="flex items-center gap-4 mb-4">
+             <Image
+                src={item.thumbnail}
+                alt={item.thumbnail}
+                width={64}
+                height={64}
+                className="rounded-lg object-cover h-16 w-16"
+              />
+             <div className="flex flex-col">
+                <h3 className="text-xl font-bold text-neutral-800 dark:text-neutral-200" dangerouslySetInnerHTML={{ __html: item.title }}>
+                </h3>
+                {/* @ts-ignore */}
+                {item.org && (
+                    /* @ts-ignore */
+                    <span className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
+                        {item.org}
+                    </span>
+                )}
+             </div>
         </div>
+       
+        <div className="text-neutral-600 dark:text-neutral-300 text-base font-normal mb-8" dangerouslySetInnerHTML={{ __html: item.desc }}>
+        </div>
+        <div className="flex flex-wrap gap-2 mt-4">
+            {item.techImages && item.techImages.map((img, idx) => (
+                <Image
+                    key={idx}
+                    src={img}
+                    alt="tech-stack"
+                    width={40}
+                    height={40}
+                    className="rounded-full object-cover border border-white/[0.1]"
+                />
+            ))}
+        </div>
+      </div>
+    ),
+  }));
+
+  return (
+    <div className='w-full' id='experience'>
+        <Timeline data={data} />
     </div>
   )
 }

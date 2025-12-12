@@ -6,10 +6,14 @@ export function TechStack() {
 
 
   return (
-  <div className="flex  flex-col justify-center items-center mt-16" id="tech">
-  <h1 className="text-6xl font-bold">My <span className="text-orange-300 ">Ultimate</span> Tech Stack</h1>
-  <p className="text-sm">scroll down on the images to see all of them</p>
-  <ParallaxScroll images={stack} />
+  <div className="flex flex-col justify-center items-center py-20" id="tech">
+    <h1 className="heading text-center mb-10">
+      My <span className="text-purple">Tech Stack</span>
+    </h1>
+    <p className="text-white-200 text-center mb-10 max-w-2xl px-4">
+      A curated list of technologies and tools I use to build scalable and efficient applications.
+    </p>
+    <ParallaxScroll images={stack} />
   </div>);
 }
 

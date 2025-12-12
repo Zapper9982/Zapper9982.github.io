@@ -15,14 +15,14 @@ import { TechStack } from "@/components/TechStack";
 export default function Home() {
   return (
     
-    <main className="relative  bg-black-100 flex justify-center items-center flex-col  mx-auto sm:px-10 px-5 overflow-clip">
-      <div className="max-w-7xl w-full">
+    <main className="relative bg-black-100 flex justify-center items-center flex-col mx-auto overflow-clip w-full">
+      <div className="w-full">
        <FloatingNav navItems={navItems}/>
        <Hero/>
        <Grid/>
+       <Experience/>
        <RecentProject/>
        <TechStack/>
-       <Experience/>
        <PhotoWall/>
        <Footer/>
       </div>

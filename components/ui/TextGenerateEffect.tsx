@@ -2,15 +2,6 @@
 import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "../../utils/cn";
-import axios from "axios";
-
-
-axios.get("https://api.quotable.io/random")
-
-
-
-
-
 
 export const TextGenerateEffect = ({
   words,

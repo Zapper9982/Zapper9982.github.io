@@ -1,13 +1,16 @@
 "use client"
-import Lottie from "react-lottie";
+import dynamic from 'next/dynamic';
 import { cn } from "../../utils/cn";
 import { BackgroundGradientAnimation } from "./GradientBg";
-import { GlobeDemo } from "./GridGlobe";
 import { useState } from "react";
 import animationData from '@/data/confetti.json'
 import { MagicButton } from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
+import { FaLocationArrow } from "react-icons/fa";
+import { SiLeetcode, SiCodeforces } from "react-icons/si";
 import Image from "next/image";
+
+const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
 
 
 export const BentoGrid = ({
@@ -38,6 +41,10 @@ export const BentoGridItem = ({
   imgClassName,
   titleClassName,
   spareImg,
+  link,
+  linkText,
+  link2,
+  linkText2,
 
 }: {
   className?: string;
@@ -49,19 +56,25 @@ export const BentoGridItem = ({
   imgClassName?: string;
   titleClassName?: string;
   spareImg?:string;
+  link?: string;
+  linkText?: string;
+  link2?: string;
+  linkText2?: string;
 }) => {
 
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => { 
-    navigator.clipboard.writeText('emailtotanmay@gmail.com');
-    setCopied(true);
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText('emailtotanmay@gmail.com');
+      setCopied(true);
+    }
   };
 
   return (
     <div
       className={cn(
-        "row-span-1 relative overflow-hidden rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none flex flex-col justify-between space-y-4 border border-white/[0.3]",
+        "row-span-1 relative overflow-hidden rounded-3xl group/bento hover:shadow-2xl hover:shadow-purple-500/10 transition duration-200 shadow-input dark:shadow-none flex flex-col justify-between space-y-4 border border-white/[0.1]",
         className
       )}
       style={{
@@ -104,7 +117,45 @@ export const BentoGridItem = ({
           <div className={` ${titleClassName} font-sans text-lg font-bold lg:text-3xl max-w-96 z-10`}  dangerouslySetInnerHTML={{ __html: title }}>
           </div>
 
-          {id === 2 && <div className="z-10"><GlobeDemo /></div>}
+          {id === 2 ? (
+            <div className="mt-4 z-10 flex gap-3">
+                {link && (
+                    <a href={link} target="_blank" rel="noreferrer" className="flex items-center gap-2 p-4 bg-[#10132E] rounded-lg border border-white/[0.1] hover:scale-105 transition-transform">
+                        <SiLeetcode className="text-3xl text-white" />
+                        <FaLocationArrow className="text-lg text-white" />
+                    </a>
+                )}
+                {link2 && (
+                    <a href={link2} target="_blank" rel="noreferrer" className="flex items-center gap-2 p-4 bg-[#10132E] rounded-lg border border-white/[0.1] hover:scale-105 transition-transform">
+                        <SiCodeforces className="text-3xl text-white" />
+                        <FaLocationArrow className="text-lg text-white" />
+                    </a>
+                )}
+            </div>
+          ) : (
+            link && (
+            <div className="mt-4 z-10 flex flex-col gap-2">
+                <a href={link} target="_blank" rel="noreferrer">
+                    <MagicButton 
+                        title={linkText || "View Proof"} 
+                        icon={<FaLocationArrow />}
+                        position="right"
+                        otherClasses="!bg-[#161a31]"
+                    />
+                </a>
+                {link2 && (
+                    <a href={link2} target="_blank" rel="noreferrer">
+                        <MagicButton 
+                            title={linkText2 || "View Proof"} 
+                            icon={<FaLocationArrow />}
+                            position="right"
+                            otherClasses="!bg-[#161a31]"
+                        />
+                    </a>
+                )}
+            </div>
+            )
+          )}
 
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
@@ -129,16 +180,18 @@ export const BentoGridItem = ({
 
           {id === 6 && (
             <div className="mt-5 relative">
-              <div className="absolute -bottom-5 right-0">
-                <Lottie options={{
-                  loop: copied,
-                  autoplay: copied,
-                  animationData,
-                  rendererSettings: {
-                    preserveAspectRatio: 'xMidYMid slice'
-                  }
-                }} />
-              </div>
+              {copied && (
+                <div className="absolute -bottom-5 right-0">
+                  <Lottie options={{
+                    loop: copied,
+                    autoplay: copied,
+                    animationData,
+                    rendererSettings: {
+                      preserveAspectRatio: 'xMidYMid slice'
+                    }
+                  }} />
+                </div>
+              )}
               <MagicButton title={copied ? 'Email Copied' : 'Copy my Email'}
                 icon={<IoCopyOutline />}
                 position="left"

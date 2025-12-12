@@ -15,29 +15,34 @@ export const navItems = [
   export const gridItems = [
     {
       id: 1,
-      title: " I prioritize getting the work done by fostering <span class='text-orange-300'>open communication</span>"
-       ,
-      description: "",
+      title: "Speaker at <span class='text-orange-300'>DPG Dialogues</span> 2025",
+      description: "Showcased my C4GT project (GenAI Test Suite) to industry leaders. Selected for Code4GovTech mentorship from 50,000+ applicants.",
       className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
-      imgClassName: "w-full h-full",
+      imgClassName: "w-full h-full object-cover",
       titleClassName: "justify-end",
-      img: "/2112.i301.031.S.m004.c13.UI and UX designers concepts isometric composition.jpg",
+      img: "/dpg.png",
       spareImg: "",
+      link: "https://www.linkedin.com/feed/update/urn:li:activity:7374397500935356416/",
+      linkText: "LinkedIn Post"
     },
     {
       id: 2,
-      title: "Building my linguistic skills for <span class='text-emerald-300'>global communication</span>",
-      description: "",
+      title: "Competitive Programmer & <span class='text-emerald-300'>Hackathon Winner</span>",
+      description: "1st place in 'Can You Hack It' (50+ teams). 600+ LeetCode problems. Codeforces Specialist (1430).",
       className: "lg:col-span-2 md:col-span-3 md:row-span-2",
       imgClassName: "",
       titleClassName: "justify-start",
       img: "",
       spareImg: "",
+      link: "https://leetcode.com/Zapper9982/",
+      linkText: "LeetCode Profile",
+      link2: "https://codeforces.com/profile/Zapper9982",
+      linkText2: "Codeforces Profile"
     },
     {
       id: 3,
       title: "My <span class='text-violet-400'>tech stack</span>",
-      description: "I constantly try to improve",
+      description: "Constantly improving",
       className: "lg:col-span-2 md:col-span-3 md:row-span-2",
       imgClassName: "",
       titleClassName: "justify-center",
@@ -46,24 +51,28 @@ export const navItems = [
     },
     {
       id: 4,
-      title: " I am a <span class='text-sky-400'>Tech enthusiast</span> with a passion for development.",
-      description: "",
+      title: "Co-Coordinator of <span class='text-sky-400'>Shutterbox</span>",
+      description: "Curated 15+ events including a photography exhibition, attracting 200+ attendees and fostering community engagement.",
       className: "lg:col-span-2 md:col-span-3 md:row-span-1",
       imgClassName: "w-full h-full",
       titleClassName: " flex flex-col justify-start",
       img: "/grid.svg",
       spareImg: "/b4.svg",
+      link: "https://www.instagram.com/tanmay.9982/",
+      linkText: "Visit Instagram"
     },
   
     {
       id: 5,
-      title: "Currently working on Learning  <span class='text-rose-900'>Kubernetes , Docker and Jenkins basically DevOPS</span>",
-      description: "The Inside Scoop",
+      title: "Open Source Contributor: <span class='text-rose-900'>12+ PRs merged</span>",
+      description: "Contributing to Piramal Swasthya’s AMRIT project as contribution to C4GT open source program.",
       className: "md:col-span-3 md:row-span-2",
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60 ",
       titleClassName: "justify-center md:justify-start lg:justify-center",
       img: "/b5.svg",
       spareImg: "/grid.svg",
+      link: "https://github.com/Zapper9982",
+      linkText: "GitHub Profile"
     },
     {
       id: 6,
@@ -122,31 +131,43 @@ export const navItems = [
   export const workExperience = [
     {
       id: 1,
-      title: "<span class='text-purple'>Frontend</span> Enhancements",
-      desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity and responsiveness .",
+      title: "GenAI + Backend Developer <span class='text-purple'>Intern</span>",
+      org: "Piramal Swasthya (Code4GovTech)",
+      desc: "• <b>Speaker at DPG Dialogues 2025:</b> Selected to showcase the project and its impact to industry leaders.<br/>• Pioneered a GenAI-powered Test Generation Suite using LangChain, RAG, and LLMs to produce JUnit5, Mockito, and MockMVC tests with 90%+ coverage.<br/>• Produced 92,000+ lines of automated test code for 4 microservices, reducing manual QA effort.<br/>• Automated test execution and coverage workflows via Maven, JaCoCo Reports and GitHub Actions.",
       className: "md:col-span-2",
-      thumbnail: "/frontend.png",
+      thumbnail: "/exp1.svg",
+      date: "Jun 2025 – Aug 2025",
+      techImages: ["/docker.png", "/github.png", "/postman.png", "/java.svg"]
     },
     {
       id: 2,
-      title: "<span class='text-amber-300'>Backend</span> Developement",
-      desc: "Developed and maintained server-side logic using Node.js, Express.js, and MongoDB.",
-      className: "md:col-span-2", // change to md:col-span-2
-      thumbnail: "/backend.jpg",
+      title: "Open Source <span class='text-amber-300'>Maintainer</span>",
+      org: "Bitbyte Summer of Code",
+      desc: "• Architected full-stack matchmaking platform using React, Flask, and PostgreSQL/Supabase with automated cross-platform development environment managing 3+ concurrent services.<br/>• Established CI/CD workflows with Dockerized local development, Husky pre-commit hooks, Commitlint, and ESLint while coordinating 15+ contributors.<br/>• Authored comprehensive technical documentation covering Docker containerization, Supabase CLI integration, and JWT-based security.",
+      className: "md:col-span-2",
+      thumbnail: "/exp4.svg",
+      date: "May 2025 – July 2025",
+      techImages: ["/React.png", "/flask.svg", "/docker.png", "/tail.svg"]
     },
     {
       id: 3,
-      title: "<span class='text-blue-500'>Personal</span> OnGoing projects",
-      desc: "Working and done with currently 5+ mega projects and a couple of mini projects ",
-      className: "md:col-span-2", // change to md:col-span-2
+      title: "Independent Full-Stack Developer",
+      org: "Self-Employed",
+      desc: "Designed and developed multiple large-scale full-stack applications, demonstrating proficiency in modern web technologies and system architecture.",
+      className: "md:col-span-2",
       thumbnail: "/exp3.svg",
+      date: "Ongoing",
+      techImages: ["/p1.svg", "/p2.svg", "/p3.svg"]
     },
     {
       id: 4,
-      title: "<span class='text-red-300'>Hackathon</span> Participation",
-      desc: "Participated in a 48-hour hackathon with my teammates and succesfull presented our project.",
+      title: "Hackathon Competitor",
+      org: "HackByte",
+      desc: "Collaborated in a high-intensity 48-hour hackathon, successfully developing and presenting a functional prototype under strict deadlines.",
       className: "md:col-span-2",
-      thumbnail: "/hackbyte.png",
+      thumbnail: "/exp2.svg",
+      date: "2024",
+      techImages: ["/hackbyte.png"]
     },
   ];
   
