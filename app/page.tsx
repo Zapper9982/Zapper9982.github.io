@@ -1,14 +1,33 @@
+import dynamic from 'next/dynamic';
 import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
 import {FloatingNav} from "../components/ui/FloatingNav";
-import { FaHome } from "react-icons/fa";
-import RecentProject from "@/components/RecentProject";
 import { navItems } from "@/data";
-import PhotoWall from "@/components/PhotoWall";
 
-import Footer from "@/components/Footer";
-import Experience from "@/components/Experience";
-import { TechStack } from "@/components/TechStack";
+// Lazy load below-the-fold components
+const Grid = dynamic(() => import('@/components/Grid'), {
+  loading: () => <div className="h-screen" />,
+  ssr: true
+});
+const Experience = dynamic(() => import('@/components/Experience'), {
+  loading: () => <div className="h-screen" />,
+  ssr: true
+});
+const RecentProject = dynamic(() => import('@/components/RecentProject'), {
+  loading: () => <div className="h-screen" />,
+  ssr: true
+});
+const TechStack = dynamic(() => import('@/components/TechStack').then(mod => mod.TechStack), {
+  loading: () => <div className="h-screen" />,
+  ssr: true
+});
+const PhotoWall = dynamic(() => import('@/components/PhotoWall'), {
+  loading: () => <div className="h-screen" />,
+  ssr: true
+});
+const Footer = dynamic(() => import('@/components/Footer'), {
+  loading: () => <div className="h-32" />,
+  ssr: true
+});
 
 
 
