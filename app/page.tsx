@@ -24,6 +24,10 @@ const PhotoWall = dynamic(() => import('@/components/PhotoWall'), {
   loading: () => <div className="h-screen" />,
   ssr: true
 });
+const GitHubPRs = dynamic(() => import('@/components/GitHubPRs'), {
+  loading: () => <div className="h-screen" />,
+  ssr: true
+});
 const Footer = dynamic(() => import('@/components/Footer'), {
   loading: () => <div className="h-32" />,
   ssr: true
@@ -42,6 +46,7 @@ export default function Home() {
        <Experience/>
        <RecentProject/>
        <TechStack/>
+       <GitHubPRs/>
        <PhotoWall/>
        <Footer/>
       </div>

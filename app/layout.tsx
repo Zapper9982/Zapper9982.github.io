@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
+import dynamic from 'next/dynamic';
+const Balatro = dynamic(() => import('../components/Balatro'), { ssr: false });
 
 
 const font = Plus_Jakarta_Sans({ 
@@ -9,7 +11,8 @@ const font = Plus_Jakarta_Sans({
   display: 'swap',
   preload: true,
   variable: '--font-jakarta',
-  fallback: ['system-ui', 'arial']
+  fallback: ['system-ui', 'arial'],
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
@@ -45,7 +48,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="relative min-h-screen">
+            <Balatro isRotate={false} mouseInteraction={true} pixelFilter={700} />
+            <div className="relative z-10">{children}</div>
+          </div>
         </ThemeProvider>
       </body>
     </html>
